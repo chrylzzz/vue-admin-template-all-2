@@ -6,7 +6,12 @@ import 'normalize.css/normalize.css' // a modern alternative to CSS resets
 
 import Element from 'element-ui'
 import './styles/element-variables.scss'
+//英文
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import locale from 'element-ui/lib/locale/lang/en' // lang i18n ---enlish
 
+//
 import '@/styles/index.scss' // global css
 
 import App from './App'
@@ -43,6 +48,15 @@ Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
 
+//英文
+// set ElementUI lang to EN
+// Vue.use(ElementUI, { locale })
+// 如果想要中文版 element-ui，按如下方式声明
+// Vue.use(ElementUI,{
+//   size: Cookies.get('size') || 'medium' // set element-ui default size
+// })
+
+//
 Vue.config.productionTip = false
 
 new Vue({

@@ -7,6 +7,7 @@ Vue.use(Router)
 import Layout from '@/layout'
 
 /* Router Modules */
+// 不直接写{}引入路由 ,而是通过引用 来导入 路由
 import componentsRouter from './modules/components'
 import chartsRouter from './modules/charts'
 import tableRouter from './modules/table'
@@ -187,7 +188,7 @@ export const asyncRoutes = [
   },
 
   /** when your routing map is too long, you can split it into small modules **/
-  // 直接引入 router
+  // 直接引入 router ,在头信息 import
   componentsRouter,
   chartsRouter,
   nestedRouter,
@@ -391,6 +392,7 @@ export const asyncRoutes = [
 ]
 //只初始化 , 通用页面
 const createRouter = () => new Router({
+  // 去掉 #
   // mode: 'history', // require service support
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
